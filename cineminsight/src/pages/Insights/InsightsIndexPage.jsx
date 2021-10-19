@@ -1,7 +1,14 @@
-export default function InsightsIndexPage() {
+import {Link} from 'react-router-dom'
+import InsightList from '../../components/Insights/InsightList'
+
+export default function InsightsIndexPage({insights}) {
     return (
       <main>
-        <div>InsightsIndexPage</div>
+        <h1>All Insights</h1>
+        <hr />
+        <main>
+          <InsightList insights={insights} />
+        </main>
       </main>
     );
   }

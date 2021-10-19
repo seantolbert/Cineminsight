@@ -117,7 +117,7 @@ function App() {
                 />
               </Route>
               <Route exact path="/insights">
-                <InsightsIndexPage cinemas={cinemas} />
+                <InsightsIndexPage cinemas={cinemas} insights={insights}/>
               </Route>
               <Route exact path="/user/insights/edit">
                 <EditInsightPage
