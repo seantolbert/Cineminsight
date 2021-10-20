@@ -112,6 +112,7 @@ function App() {
               <Route exact path="/user/insights/new">
                 <AddInsightPage
                   handleAddInsight={handleAddInsight}
+                  cinemas={cinemas}
                   insights={insights}
                   user={user}
                 />
