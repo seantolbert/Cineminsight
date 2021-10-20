@@ -6,7 +6,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import UserProfilePage from "../User/UserProfilePage";
 import AddCinemaPage from "../Cinemas/AddCinemaPage";
 import CinemasIndexPage from "../Cinemas/CinemasIndexPage";
-import CinemaDetailsPage from "../Cinemas/CinemaDetailPage";
+import CinemaDetailsPage from "../Cinemas/CinemaDetailsPage";
 import EditCinemaPage from "../Cinemas/EditCinemaPage";
 import InsightsIndexPage from "../Insights/InsightsIndexPage";
 import AddInsightPage from "../User/AddInsightPage";
@@ -101,7 +101,7 @@ function App() {
                 <CinemasIndexPage cinemas={cinemas} />
               </Route>
               <Route exact path="/cinema-details">
-                <CinemaDetailsPage handleDeleteCinema={handleDeleteCinema} />
+                <CinemaDetailsPage handleDeleteCinema={handleDeleteCinema} cinemas={cinemas} />
               </Route>
               <Route exact path="/edit">
                 <EditCinemaPage handleUpdateCinema={handleUpdateCinema} />
