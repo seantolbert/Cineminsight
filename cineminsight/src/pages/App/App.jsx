@@ -109,7 +109,7 @@ function App() {
               <Route exact path="/user">
                 <UserProfilePage user={user} insights={insights} />
               </Route>
-              <Route exact path="/user/insights/new">
+              <Route exact path="/user/insights/newinsight">
                 <AddInsightPage
                   handleAddInsight={handleAddInsight}
                   cinemas={cinemas}

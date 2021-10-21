@@ -12,14 +12,14 @@ export default function UserProfilePage({
       <h1>Profile</h1>
       <UserCard user={user} />
       <Link to="user/insights/newinsight">
-        <button>New Insight</button>
+        <button>New Log</button>
       </Link>
       <h2>Insights</h2>
       <hr />
       <UserInsights
-        handleDeleteInsight={handleDeleteInsight}
         insights={insights}
         user={user}
+        handleDeleteInsight={handleDeleteInsight}
       />
     </main>
   );

@@ -10,6 +10,7 @@ export default function CinemaDetailsPage() {
         <div>CinemaDetailsPage</div>
         <h1>Cinema Details</h1>
         <CinemaCard cinema={cinemaItem} key={cinemaItem._id}/>
+        
       </main>
     );
   }
