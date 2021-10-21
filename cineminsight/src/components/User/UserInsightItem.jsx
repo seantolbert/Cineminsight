@@ -20,7 +20,9 @@ export default function UserInsightItem({ handleDeleteInsight, insightItem }) {
         <button>Edit</button>
       </Link>
       &nbsp;
-      <button onClick={() => handleDeleteInsight(insightItem._id)}>
+      <button 
+        onClick={() => handleDeleteInsight(insightItem._id)}
+      >
         Delete
       </button>
     </>

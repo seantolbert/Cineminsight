@@ -107,7 +107,7 @@ function App() {
                 <EditCinemaPage handleUpdateCinema={handleUpdateCinema} />
               </Route>
               <Route exact path="/user">
-                <UserProfilePage user={user} insights={insights} />
+                <UserProfilePage user={user} insights={insights} handleDeleteInsight={handleDeleteInsight}/>
               </Route>
               <Route exact path="/user/insights/newinsight">
                 <AddInsightPage

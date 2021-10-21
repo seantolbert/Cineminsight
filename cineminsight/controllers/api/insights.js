@@ -12,7 +12,7 @@ const index = async (req, res) => {
 const show = async (req, res) => {
   try {
     const insight = await Insight.findById(req.params.insightId);
-    res.json(log);
+    res.json(insight);
   } catch {
     res.status(400);
   }

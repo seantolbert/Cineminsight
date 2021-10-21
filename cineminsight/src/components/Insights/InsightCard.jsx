@@ -7,6 +7,7 @@ export default function InsightCard({ insightItem }) {
         Title: {insightItem.cinema} <br />
         Rating: {insightItem.rating} <br />
         Review: {insightItem.review} <br />
+        User: {insightItem.user}
       </div>
       <div>
         <Link
