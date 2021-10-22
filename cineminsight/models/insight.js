@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const insightSchema = new Schema({
-  content: {
+  cinema: {
     type: String,
     ref: "Cinema",
   },

@@ -1,7 +1,7 @@
 import CinemaCard from '../../components/Cinemas/CinemaCard'
 import {useLocation} from 'react-router-dom'
 
-export default function CinemaDetailsPage() {
+export default function CinemaDetailsPage({handleDeleteCinema}) {
   const {
     state: {cinemaItem}
   } = useLocation();
@@ -9,8 +9,7 @@ export default function CinemaDetailsPage() {
       <main>
         <div>CinemaDetailsPage</div>
         <h1>Cinema Details</h1>
-        <CinemaCard cinema={cinemaItem} key={cinemaItem._id}/>
-        
+        <CinemaCard cinema={cinemaItem} key={cinemaItem._id} handleDeleteCinema={handleDeleteCinema}/>
       </main>
     );
   }

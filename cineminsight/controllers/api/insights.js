@@ -29,9 +29,13 @@ const create = async (req, res) => {
 
 const update = async (req, res) => {
   try {
-    const updatedInsight = await Insight.findByIdAndUpdate(req.params.insightId, req.body, {
-      new: true,
-    });
+    const updatedInsight = await Insight.findByIdAndUpdate(
+      req.params.insightId,
+      req.body,
+      {
+        new: true,
+      }
+    );
     res.status(200).json(updatedInsight);
   } catch {
     res.status(400);
@@ -40,7 +44,9 @@ const update = async (req, res) => {
 
 const deleteOne = async (req, res) => {
   try {
-     const deletedInsight = await Insight.findByIdAndRemove(req.params.insightId);
+    const deletedInsight = await Insight.findByIdAndRemove(
+      req.params.insightId
+    );
     res.status(200).json(deletedInsight);
   } catch {
     res.status(400);
@@ -48,8 +54,8 @@ const deleteOne = async (req, res) => {
 };
 
 module.exports = {
-  create,
   index,
+  create,
   show,
   update,
   delete: deleteOne,

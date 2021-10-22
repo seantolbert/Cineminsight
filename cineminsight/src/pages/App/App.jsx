@@ -12,6 +12,7 @@ import InsightsIndexPage from "../Insights/InsightsIndexPage";
 import AddInsightPage from "../User/AddInsightPage";
 import EditInsightPage from "../User/EditInsightPage";
 import InsightDetailsPage from "../User/InsightDetailsPage";
+import HomePage from "../HomePage/HomePage";
 import * as cinemasAPI from "../../utilities/cinemas-api";
 import * as insightsAPI from "../../utilities/insights-api";
 
@@ -92,8 +93,12 @@ function App() {
           <div className="nav">
             <NavBar user={user} setUser={setUser} />
           </div>
+
           <>
             <Switch>
+              <Route exact path="/">
+                <HomePage user={user} cinemas={cinemas} insights={insights} />
+              </Route>
               <Route path="/cinemas/new">
                 <AddCinemaPage handleAddCinema={handleAddCinema} />
               </Route>
@@ -101,13 +106,20 @@ function App() {
                 <CinemasIndexPage cinemas={cinemas} />
               </Route>
               <Route exact path="/cinema-details">
-                <CinemaDetailsPage handleDeleteCinema={handleDeleteCinema} cinemas={cinemas} />
+                <CinemaDetailsPage
+                  handleDeleteCinema={handleDeleteCinema}
+                  cinemas={cinemas}
+                />
               </Route>
               <Route exact path="/edit">
                 <EditCinemaPage handleUpdateCinema={handleUpdateCinema} />
               </Route>
               <Route exact path="/user">
-                <UserProfilePage user={user} insights={insights} handleDeleteInsight={handleDeleteInsight}/>
+                <UserProfilePage
+                  user={user}
+                  insights={insights}
+                  handleDeleteInsight={handleDeleteInsight}
+                />
               </Route>
               <Route exact path="/user/insights/newinsight">
                 <AddInsightPage
@@ -118,7 +130,7 @@ function App() {
                 />
               </Route>
               <Route exact path="/insights">
-                <InsightsIndexPage cinemas={cinemas} insights={insights}/>
+                <InsightsIndexPage cinemas={cinemas} insights={insights} />
               </Route>
               <Route exact path="/user/insights/edit">
                 <EditInsightPage
