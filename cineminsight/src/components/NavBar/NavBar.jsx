@@ -9,7 +9,10 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
+      <Link to="/">Home</Link>
+      &nbsp; | &nbsp;
       welcome, <b>{user.name}</b>
+      &nbsp; | &nbsp;
       <Link to="/cinemas"> All Cinemas</Link>
       &nbsp; | &nbsp;
       <Link to="/insights">All Insights</Link>
