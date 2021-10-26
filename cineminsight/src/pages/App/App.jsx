@@ -89,7 +89,7 @@ function App() {
   return (
     <main className="App">
       {user ? (
-        <div className="container">
+        <div>
           <div className="nav">
             <NavBar user={user} setUser={setUser} />
           </div>
