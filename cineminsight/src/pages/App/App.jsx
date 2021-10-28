@@ -4,7 +4,7 @@ import { getUser } from "../../utilities/users-service";
 import NavBar from "../../components/NavBar/NavBar";
 import AuthPage from "../AuthPage/AuthPage";
 import UserProfilePage from "../User/UserProfilePage";
-import AddCinemaPage from "../Cinemas/AddCinemaPage";
+import AddCinemaPage from "../Cinemas/AddCinemaPage/AddCinemaPage";
 import CinemasIndexPage from "../Cinemas/CinemasIndexPage";
 import CinemaDetailsPage from "../Cinemas/CinemaDetailsPage";
 import EditCinemaPage from "../Cinemas/EditCinemaPage";
@@ -13,6 +13,7 @@ import AddInsightPage from "../User/AddInsightPage";
 import EditInsightPage from "../User/EditInsightPage";
 import InsightDetailsPage from "../User/InsightDetailsPage";
 import HomePage from "../HomePage/HomePage";
+import FormExample from '../Cinemas/AddCinemaPage/FormExample'
 import * as cinemasAPI from "../../utilities/cinemas-api";
 import * as insightsAPI from "../../utilities/insights-api";
 
@@ -99,6 +100,7 @@ function App() {
               <Route exact path="/">
                 <HomePage user={user} cinemas={cinemas} insights={insights} />
               </Route>
+             
               <Route path="/cinemas/new">
                 <AddCinemaPage handleAddCinema={handleAddCinema} />
               </Route>
