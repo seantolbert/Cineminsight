@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PerfectExample from "../../Assets/perfect_example.png";
-import Logo from "../../Assets/cineminsight_logo.png";
+// import Logo from "../../Assets/cineminsight_logo.png";
 
 export default function HomePage({ user }) {
   return (

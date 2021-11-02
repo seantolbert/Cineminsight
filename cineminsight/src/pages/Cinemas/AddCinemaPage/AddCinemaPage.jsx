@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect, Fragment } from "react";
-import { Listbox, Transition } from "@headlessui/react";
-import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
+import React, { useState, useRef, useEffect } from "react";
+
 
 const genreList = [
   "Select Genre",
@@ -33,7 +32,7 @@ export default function AddCinemaPage({ handleAddCinema }) {
 
   useEffect(() => {
     formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,9 +47,7 @@ export default function AddCinemaPage({ handleAddCinema }) {
     });
   };
 
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-  }
+
 
   return (
     <>
@@ -79,7 +76,7 @@ export default function AddCinemaPage({ handleAddCinema }) {
           </select>
         </div>
         <button type="submit" disabled={invalidForm}>
-          ADD GAME
+          ADD Cinema
         </button>
       </form>
     </>

@@ -1,6 +1,6 @@
 import * as usersService from "../../utilities/users-service";
 import { Link } from "react-router-dom";
-import Logo from "../../Assets/cineminsight_logo.png";
+// import Logo from "../../Assets/cineminsight_logo.png";
 
 export default function NavBar({ user, setUser }) {
   const handleLogOut = () => {

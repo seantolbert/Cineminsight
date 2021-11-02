@@ -1,4 +1,3 @@
-import {Link} from 'react-router-dom'
 import InsightList from '../../components/Insights/InsightList'
 
 export default function InsightsIndexPage({insights}) {

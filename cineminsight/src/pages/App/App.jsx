@@ -13,7 +13,6 @@ import AddInsightPage from "../User/AddInsightPage";
 import EditInsightPage from "../User/EditInsightPage";
 import InsightDetailsPage from "../User/InsightDetailsPage";
 import HomePage from "../HomePage/HomePage";
-import FormExample from '../Cinemas/AddCinemaPage/FormExample'
 import * as cinemasAPI from "../../utilities/cinemas-api";
 import * as insightsAPI from "../../utilities/insights-api";
 
