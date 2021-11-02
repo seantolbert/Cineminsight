@@ -5,8 +5,8 @@ export default function CinemasIndexPage({cinemas}) {
     return (
       <main>
         <div>CinemasIndexPage</div>
-        <h1>All Games</h1>
-        <Link to="/cinemas/new"><button>New Game</button></Link>
+        <h1>All Cinemas</h1>
+        <Link to="/cinemas/new"><button>New Cinema</button></Link>
         <hr />
         <main>
           <CinemasList cinemas={cinemas}/>

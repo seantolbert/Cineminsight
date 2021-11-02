@@ -23,6 +23,7 @@ const index = async (req, res) => {
     try {
       const newCinema = await Cinema.create(req.body);
       res.status(201).json(newCinema);
+      console.log('yaya')
     } catch {
       res.status(400);
     }
