@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import Button from "react-bootstrap/Button";
 
 
 const genreList = [
@@ -32,7 +33,7 @@ export default function AddCinemaPage({ handleAddCinema }) {
 
   useEffect(() => {
     formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  }, []);
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,8 +47,6 @@ export default function AddCinemaPage({ handleAddCinema }) {
       [e.target.name]: e.target.value,
     });
   };
-
-
 
   return (
     <>
@@ -75,9 +74,9 @@ export default function AddCinemaPage({ handleAddCinema }) {
             })}
           </select>
         </div>
-        <button type="submit" disabled={invalidForm}>
+        <Button class="button" type="submit" disabled={invalidForm}>
           ADD Cinema
-        </button>
+        </Button>
       </form>
     </>
   );

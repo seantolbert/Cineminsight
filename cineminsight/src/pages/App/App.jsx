@@ -16,6 +16,9 @@ import HomePage from "../HomePage/HomePage";
 import * as cinemasAPI from "../../utilities/cinemas-api";
 import * as insightsAPI from "../../utilities/insights-api";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import Container from 'react-bootstrap/Container'
+
 function App() {
   const [user, setUser] = useState(getUser());
   const [cinemas, setCinemas] = useState([]);
@@ -95,59 +98,61 @@ function App() {
           </div>
 
           <>
-            <Switch>
-              <Route exact path="/">
-                <HomePage user={user} cinemas={cinemas} insights={insights} />
-              </Route>
-             
-              <Route path="/cinemas/new">
-                <AddCinemaPage handleAddCinema={handleAddCinema} />
-              </Route>
-              <Route path="/cinemas">
-                <CinemasIndexPage cinemas={cinemas} />
-              </Route>
-              <Route exact path="/cinema-details">
-                <CinemaDetailsPage
-                  handleDeleteCinema={handleDeleteCinema}
-                  cinemas={cinemas}
-                />
-              </Route>
-              <Route exact path="/edit">
-                <EditCinemaPage handleUpdateCinema={handleUpdateCinema} />
-              </Route>
-              <Route exact path="/user">
-                <UserProfilePage
-                  user={user}
-                  insights={insights}
-                  handleDeleteInsight={handleDeleteInsight}
-                />
-              </Route>
-              <Route exact path="/user/insights/newinsight">
-                <AddInsightPage
-                  handleAddInsight={handleAddInsight}
-                  cinemas={cinemas}
-                  insights={insights}
-                  user={user}
-                />
-              </Route>
-              <Route exact path="/insights">
-                <InsightsIndexPage cinemas={cinemas} insights={insights} />
-              </Route>
-              <Route exact path="/user/insights/edit">
-                <EditInsightPage
-                  handleUpdateInsight={handleUpdateInsight}
-                  cinemas={cinemas}
-                  user={user}
-                />
-              </Route>
-              <Route exact path="/user/insights/details">
-                <InsightDetailsPage
-                  handleDeleteInsight={handleDeleteInsight}
-                  cinemas={cinemas}
-                  user={user}
-                />
-              </Route>
-            </Switch>
+            <Container>
+              <Switch>
+                <Route exact path="/">
+                  <HomePage user={user} cinemas={cinemas} insights={insights} />
+                </Route>
+
+                <Route path="/cinemas/new">
+                  <AddCinemaPage handleAddCinema={handleAddCinema} />
+                </Route>
+                <Route path="/cinemas">
+                  <CinemasIndexPage cinemas={cinemas} />
+                </Route>
+                <Route exact path="/cinema-details">
+                  <CinemaDetailsPage
+                    handleDeleteCinema={handleDeleteCinema}
+                    cinemas={cinemas}
+                  />
+                </Route>
+                <Route exact path="/edit">
+                  <EditCinemaPage handleUpdateCinema={handleUpdateCinema} />
+                </Route>
+                <Route exact path="/user">
+                  <UserProfilePage
+                    user={user}
+                    insights={insights}
+                    handleDeleteInsight={handleDeleteInsight}
+                  />
+                </Route>
+                <Route exact path="/user/insights/newinsight">
+                  <AddInsightPage
+                    handleAddInsight={handleAddInsight}
+                    cinemas={cinemas}
+                    insights={insights}
+                    user={user}
+                  />
+                </Route>
+                <Route exact path="/insights">
+                  <InsightsIndexPage cinemas={cinemas} insights={insights} />
+                </Route>
+                <Route exact path="/user/insights/edit">
+                  <EditInsightPage
+                    handleUpdateInsight={handleUpdateInsight}
+                    cinemas={cinemas}
+                    user={user}
+                  />
+                </Route>
+                <Route exact path="/user/insights/details">
+                  <InsightDetailsPage
+                    handleDeleteInsight={handleDeleteInsight}
+                    cinemas={cinemas}
+                    user={user}
+                  />
+                </Route>
+              </Switch>
+            </Container>
           </>
         </div>
       ) : (
