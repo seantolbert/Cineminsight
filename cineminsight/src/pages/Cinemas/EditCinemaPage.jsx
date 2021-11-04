@@ -1,17 +1,26 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const genreList = [
+  "Select Genre",
   "Sci-Fi",
   "Drama",
   "Action",
   "Comedy",
   "Western",
   "Anime",
-  "Rom-Com",
+  "Historical",
+  "Documentary",
+  "Educational",
+  "RomCom",
   "Mystery",
   "Thriller",
   "Fantasy",
+  "Crime",
+  "Horror",
+  "Stupid",
 ];
 
 export default function EditCinemaPage({ handleUpdateCinema }) {
@@ -37,35 +46,68 @@ export default function EditCinemaPage({ handleUpdateCinema }) {
   };
 
   return (
-    <main>
-      <div>EditCinemaPage</div>
-      <h1>Edit Cinema</h1>
-      <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
-        <div>
-          <label>Title</label>
-          <input
+    // <main>
+    //   <div>EditCinemaPage</div>
+    //   <h1>Edit Cinema</h1>
+    //   <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
+    //     <div>
+    //       <label>Title</label>
+    //       <input
+    //         name="title"
+    //         value={editedCinema.title}
+    //         onChange={handleChange}
+    //         required
+    //       />
+    //     </div>
+    //     <div>
+    //       <label>Genre</label>
+    //       <select name="genre" value={editedCinema.genre} onChange={handleChange}>
+    //         {genreList.map((genre) => {
+    //           return <option value={genre}>{genre}</option>;
+    //         })}
+    //       </select>
+    //     </div>
+    //     <button type="submit" disabled={invalidForm}>
+    //       Save Changes
+    //     </button>
+    //     &nbsp;&nbsp;
+    //     <Link to="/cinemas">
+    //       <button>Cancel</button>
+    //     </Link>
+    //   </form>
+    // </main>
+    <>
+      <h1>Edited Cinema</h1>
+
+      <Form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Cinema Title</Form.Label>
+          <Form.Control
+            type="text"
             name="title"
             value={editedCinema.title}
             onChange={handleChange}
             required
           />
-        </div>
-        <div>
-          <label>Genre</label>
-          <select name="genre" value={editedCinema.genre} onChange={handleChange}>
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Genre</Form.Label>
+          <Form.Select
+            name="genre"
+            value={editedCinema.genre}
+            onChange={handleChange}
+            required
+          >
             {genreList.map((genre) => {
               return <option value={genre}>{genre}</option>;
             })}
-          </select>
-        </div>
-        <button type="submit" disabled={invalidForm}>
-          Save Changes
-        </button>
-        &nbsp;&nbsp;
-        <Link to="/cinemas">
-          <button>Cancel</button>
-        </Link>
-      </form>
-    </main>
+          </Form.Select>
+        </Form.Group>
+        <Button class="button" type="submit" disabled={invalidForm}>
+          Add Cinema
+        </Button>
+      </Form>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Button from "react-bootstrap/Button";
-
+import Form from "react-bootstrap/Form";
 
 const genreList = [
   "Select Genre",
@@ -50,20 +50,23 @@ export default function AddCinemaPage({ handleAddCinema }) {
 
   return (
     <>
-      <h1>Add Game</h1>
-      <form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
-        <div>
-          <label>Game Title</label>
-          <input
+      <h1>Add Cinema</h1>
+
+      <Form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Cinema Title</Form.Label>
+          <Form.Control
+            type="text"
             name="title"
             value={newCinema.title}
             onChange={handleChange}
             required
           />
-        </div>
-        <div>
-          <label>Game Genre</label>
-          <select
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Genre</Form.Label>
+          <Form.Select
             name="genre"
             value={newCinema.genre}
             onChange={handleChange}
@@ -72,12 +75,12 @@ export default function AddCinemaPage({ handleAddCinema }) {
             {genreList.map((genre) => {
               return <option value={genre}>{genre}</option>;
             })}
-          </select>
-        </div>
+          </Form.Select>
+        </Form.Group>
         <Button class="button" type="submit" disabled={invalidForm}>
-          ADD Cinema
+          Add Cinema
         </Button>
-      </form>
+      </Form>
     </>
   );
 }

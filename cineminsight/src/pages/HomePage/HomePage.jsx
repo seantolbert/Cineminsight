@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import PerfectExample from "../../Assets/perfect_example.png";
 import Logo from "../../Assets/cineminsight_logo.png";
 import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Image from "react-bootstrap/Image";
 
 export default function HomePage({ user }) {
