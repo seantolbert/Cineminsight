@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const genreList = [
   "Select Genre",
@@ -50,37 +53,42 @@ export default function AddCinemaPage({ handleAddCinema }) {
 
   return (
     <>
-      <h1>Add Cinema</h1>
+      <Container fluid style={{marginTop:50}}>
+        <Row>
+          <Col xs={6} md={{ span: 6, offset: 3 }}>
+            <h1>Add Cinema</h1>
+            <Form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
+              <Form.Group className="mb-3">
+                <Form.Label>Cinema Title</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="title"
+                  value={newCinema.title}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
 
-      <Form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Cinema Title</Form.Label>
-          <Form.Control
-            type="text"
-            name="title"
-            value={newCinema.title}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Genre</Form.Label>
-          <Form.Select
-            name="genre"
-            value={newCinema.genre}
-            onChange={handleChange}
-            required
-          >
-            {genreList.map((genre) => {
-              return <option value={genre}>{genre}</option>;
-            })}
-          </Form.Select>
-        </Form.Group>
-        <Button class="button" type="submit" disabled={invalidForm}>
-          Add Cinema
-        </Button>
-      </Form>
+              <Form.Group className="mb-3">
+                <Form.Label>Genre</Form.Label>
+                <Form.Select
+                  name="genre"
+                  value={newCinema.genre}
+                  onChange={handleChange}
+                  required
+                >
+                  {genreList.map((genre) => {
+                    return <option value={genre}>{genre}</option>;
+                  })}
+                </Form.Select>
+              </Form.Group>
+              <Button class="button" type="submit" disabled={invalidForm}>
+                Add Cinema
+              </Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }

@@ -78,6 +78,7 @@ export default function EditCinemaPage({ handleUpdateCinema }) {
     // </main>
     <>
       <h1>Edited Cinema</h1>
+<div className="mx-auto">
 
       <Form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
@@ -88,7 +89,7 @@ export default function EditCinemaPage({ handleUpdateCinema }) {
             value={editedCinema.title}
             onChange={handleChange}
             required
-          />
+            />
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -98,7 +99,7 @@ export default function EditCinemaPage({ handleUpdateCinema }) {
             value={editedCinema.genre}
             onChange={handleChange}
             required
-          >
+            >
             {genreList.map((genre) => {
               return <option value={genre}>{genre}</option>;
             })}
@@ -108,6 +109,7 @@ export default function EditCinemaPage({ handleUpdateCinema }) {
           Add Cinema
         </Button>
       </Form>
+            </div>
     </>
   );
 }
