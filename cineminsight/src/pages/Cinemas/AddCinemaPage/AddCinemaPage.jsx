@@ -53,9 +53,9 @@ export default function AddCinemaPage({ handleAddCinema }) {
 
   return (
     <>
-      <Container fluid style={{marginTop:50}}>
+      <Container fluid style={{ marginTop: 50 }}>
         <Row>
-          <Col xs={6} md={{ span: 6, offset: 3 }}>
+          <Col xs={12} md={{ span: 6, offset: 3 }}>
             <h1>Add Cinema</h1>
             <Form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
