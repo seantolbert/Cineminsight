@@ -44,7 +44,7 @@ export default class SignUpForm extends Component {
             <Col xs={12} md={{ span: 5, offset: 3 }}>
               <h1>Sign Up</h1>
               <Form autoComplete="off" onSubmit={this.handleSubmit}>
-                <Form.Group>
+                <Form.Group className="mb-3">
                   <Form.Label>Username</Form.Label>
                   <Form.Control
                     type="text"
@@ -54,7 +54,7 @@ export default class SignUpForm extends Component {
                     required
                   />
                 </Form.Group>
-                <Form.Group>
+                <Form.Group className="mb-3">
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
@@ -64,7 +64,7 @@ export default class SignUpForm extends Component {
                     required
                   />
                 </Form.Group>
-                <Form.Group>
+                <Form.Group className="mb-3">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                     type="password"
@@ -74,7 +74,7 @@ export default class SignUpForm extends Component {
                     required
                   />
                 </Form.Group>
-                <Form.Group>
+                <Form.Group className="mb-3">
                   <Form.Label>Password Confirmation</Form.Label>
                   <Form.Control
                     type="password"
@@ -84,7 +84,12 @@ export default class SignUpForm extends Component {
                     required
                   />
                 </Form.Group>
-                <Button style={{ marginTop: 10 }} size="lg" type="submit">
+                <Button
+                  style={{ marginTop: 10 }}
+                  size="lg"
+                  type="submit"
+                  disabled={disable}
+                >
                   Sign Up
                 </Button>
               </Form>

@@ -36,7 +36,7 @@ export default function AddCinemaPage({ handleAddCinema }) {
 
   useEffect(() => {
     formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -82,7 +82,7 @@ export default function AddCinemaPage({ handleAddCinema }) {
                   })}
                 </Form.Select>
               </Form.Group>
-              <Button class="button" type="submit" disabled={invalidForm}>
+              <Button size='lg' type="submit" disabled={invalidForm}>
                 Add Cinema
               </Button>
             </Form>

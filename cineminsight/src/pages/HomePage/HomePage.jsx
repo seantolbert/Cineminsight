@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import PerfectExample from "../../Assets/perfect_example.png";
-import Logo from "../../Assets/cineminsight_logo.png";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 

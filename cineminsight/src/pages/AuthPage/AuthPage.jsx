@@ -4,8 +4,6 @@ import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
-import Navbar from 'react-bootstrap/Navbar'
-import Logo from "../../Assets/cineminsight_logo.png";
 
 const AuthPage = ({ setUser }) => {
   const [showLogin, setShowLogin] = useState(true);
