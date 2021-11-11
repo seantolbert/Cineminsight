@@ -1,22 +1,30 @@
 import SignUpForm from "../../components/User/SignUpForm";
 import LoginForm from "../../components/User/LogInForm";
 import { useState } from "react";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import Nav from "react-bootstrap/Nav";
 
 const AuthPage = ({ setUser }) => {
   const [showLogin, setShowLogin] = useState(true);
   return (
     <main>
-      <div>
-        <button onClick={() => setShowLogin(!showLogin)}>
-          {showLogin ? "Sign Up" : "Log In"}
-        </button>
-      </div>
+      <Container fluid>
+        
+        <Nav className="justify-content-end">
+          <Nav.Item>
+            <Button size="lg" onClick={() => setShowLogin(!showLogin)}>
+              {showLogin ? "Sign Up" : "Log In"}
+            </Button>
+          </Nav.Item>
+        </Nav>
 
-      {showLogin ? (
-        <LoginForm setUser={setUser} />
-      ) : (
-        <SignUpForm setUser={setUser} />
-      )}
+        {showLogin ? (
+          <LoginForm setUser={setUser} />
+        ) : (
+          <SignUpForm setUser={setUser} />
+        )}
+      </Container>
     </main>
   );
 };

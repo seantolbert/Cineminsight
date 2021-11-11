@@ -7,7 +7,7 @@ import Image from "react-bootstrap/Image";
 export default function HomePage({ user }) {
   return (
     <>
-      <main style={{marginBottom:50}}>
+      <main style={{ marginBottom: 50 }}>
         <h1>Welcome To Cineminsight </h1>
         <p>Record your thoughts for your favorite shows and Movies!</p>
         <p>Get started and enjoy!</p>
