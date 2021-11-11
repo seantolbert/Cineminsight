@@ -6,11 +6,10 @@ export default function CinemaDetailsPage({handleDeleteCinema}) {
     state: {cinemaItem}
   } = useLocation();
     return (
-      <main>
-        <div>CinemaDetailsPage</div>
-        <h1>Cinema Details</h1>
+      <>
+        <h1>Details</h1>
         <CinemaCard cinema={cinemaItem} key={cinemaItem._id} handleDeleteCinema={handleDeleteCinema}/>
-      </main>
+      </>
     );
   }
   

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -49,36 +49,6 @@ export default function EditCinemaPage({ handleUpdateCinema }) {
   };
 
   return (
-    // <main>
-    //   <div>EditCinemaPage</div>
-    //   <h1>Edit Cinema</h1>
-    //   <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
-    //     <div>
-    //       <label>Title</label>
-    //       <input
-    //         name="title"
-    //         value={editedCinema.title}
-    //         onChange={handleChange}
-    //         required
-    //       />
-    //     </div>
-    //     <div>
-    //       <label>Genre</label>
-    //       <select name="genre" value={editedCinema.genre} onChange={handleChange}>
-    //         {genreList.map((genre) => {
-    //           return <option value={genre}>{genre}</option>;
-    //         })}
-    //       </select>
-    //     </div>
-    //     <button type="submit" disabled={invalidForm}>
-    //       Save Changes
-    //     </button>
-    //     &nbsp;&nbsp;
-    //     <Link to="/cinemas">
-    //       <button>Cancel</button>
-    //     </Link>
-    //   </form>
-    // </main>
     <>
       <Container fluid style={{ marginTop: 50 }}>
         <Row>

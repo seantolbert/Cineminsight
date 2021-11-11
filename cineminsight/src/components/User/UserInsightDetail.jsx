@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button'
+
 
 export default function UserInsightDetail({ insight }) {
   return (
@@ -15,7 +17,7 @@ export default function UserInsightDetail({ insight }) {
       <hr />
       <div>
         <Link to="/user">
-          <button>Return to List</button>
+          <Button>Return to List</Button>
         </Link>
       </div>
     </>

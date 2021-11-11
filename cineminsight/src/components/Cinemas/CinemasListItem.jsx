@@ -1,30 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
 
 export default function CinemasListItem({ cinemaItem }) {
   return (
-    <div>
-      <p>
+    <>
+      <Alert>
         <strong>{cinemaItem.title}</strong> &nbsp; &nbsp; &nbsp;
         <strong>{cinemaItem.genre}</strong>
-      </p>
-      <Link 
-        to={{
-          pathname: '/cinema-details', 
-          state: {cinemaItem}
-          }}>
-        <button>Details</button>
-      </Link>
-      <hr />
-      <Link
-        to={{
-          pathname: "/edit",
-          state: { cinemaItem },
-        }}
-      >
-        <button>Edit</button>
-      </Link>
-      <hr />
-    </div>
+        <hr />
+        <Link
+        style={{marginRight: 10}}
+          to={{
+            pathname: "/cinema-details",
+            state: { cinemaItem },
+          }}
+        >
+          <Button>Details</Button>
+        </Link>
+        <Link
+          to={{
+            pathname: "/edit",
+            state: { cinemaItem },
+          }}
+        >
+          <Button>Edit</Button>
+        </Link>
+      </Alert>
+    </>
   );
 }

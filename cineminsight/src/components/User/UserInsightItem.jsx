@@ -1,30 +1,41 @@
 import { Link } from "react-router-dom";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
 
 export default function UserInsightItem({ handleDeleteInsight, insightItem }) {
   return (
     <>
-      <div>
-        {insightItem.cinema} <br />
-        {insightItem.rating} <br />
-        {insightItem.review} <br />
-      </div>
-      <div>
+      <Alert variant="warning">
+        <div>
+          <strong>
+            {insightItem.cinema} <br />
+          </strong>
+          <strong>
+            {insightItem.rating} <br />
+          </strong>
+          <strong>
+            {insightItem.review} <br />
+          </strong>
+        </div>
+        <hr />
+
         <Link
+          style={{ marginRight: 10 }}
           to={{ pathname: "/user/insights/details", state: { insightItem } }}
         >
-          <button>Details</button>
+          <Button>Details</Button>
         </Link>
-      </div>
-      &nbsp;
-      <Link to={{ pathname: "user/insights/edit", state: { insightItem } }}>
-        <button>Edit</button>
-      </Link>
-      &nbsp;
-      <button 
-        onClick={() => handleDeleteInsight(insightItem._id)}
-      >
-        Delete
-      </button>
+
+        <Link
+          style={{ marginRight: 10 }}
+          to={{ pathname: "user/insights/edit", state: { insightItem } }}
+        >
+          <Button>Edit</Button>
+        </Link>
+        <Button variant='danger' onClick={() => handleDeleteInsight(insightItem._id)}>
+          Delete
+        </Button>
+      </Alert>
     </>
   );
 }

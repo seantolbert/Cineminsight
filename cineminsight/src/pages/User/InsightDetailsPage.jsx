@@ -10,6 +10,7 @@ export default function InsightDetailsPage() {
   return (
     <main>
       <h1>Insight Details</h1>
+      <hr />
       <UserInsightDetail insight={insightItem} key={insightItem._id} />
     </main>
   );
