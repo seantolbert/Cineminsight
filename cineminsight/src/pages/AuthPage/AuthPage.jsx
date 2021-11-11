@@ -4,20 +4,22 @@ import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
+import Navbar from 'react-bootstrap/Navbar'
+import Logo from "../../Assets/cineminsight_logo.png";
 
 const AuthPage = ({ setUser }) => {
   const [showLogin, setShowLogin] = useState(true);
   return (
     <main>
       <Container fluid>
+          <Nav style={{ marginTop: 10 }} className="justify-content-center">
+            <Nav.Item>
+              <Button size="lg" onClick={() => setShowLogin(!showLogin)}>
+                {showLogin ? "Sign Up" : "Log In"}
+              </Button>
+            </Nav.Item>
+          </Nav>
         
-        <Nav className="justify-content-end">
-          <Nav.Item>
-            <Button size="lg" onClick={() => setShowLogin(!showLogin)}>
-              {showLogin ? "Sign Up" : "Log In"}
-            </Button>
-          </Nav.Item>
-        </Nav>
 
         {showLogin ? (
           <LoginForm setUser={setUser} />

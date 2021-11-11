@@ -31,7 +31,7 @@ export default function LogIn({ setUser }) {
       <Container fluid style={{ marginTop: 50 }}>
         <Row>
           <Col xs={12} md={{ span: 5, offset: 3 }}>
-            <h1>Log In</h1>
+            <h1 >Log In</h1>
             <Form autoComplete="off" onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>Email</Form.Label>
@@ -53,7 +53,7 @@ export default function LogIn({ setUser }) {
                   required
                 />
               </Form.Group>
-              <Button type="submit">Log In</Button>
+              <Button size='lg' type="submit">Log In</Button>
             </Form>
             <p className="error-message">&nbsp;{error}</p>
           </Col>
