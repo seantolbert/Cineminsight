@@ -20,7 +20,7 @@ export default function AddInsightPage({ handleAddInsight, cinemas, user }) {
 
   useEffect(() => {
     formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  }, []);
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();

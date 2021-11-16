@@ -36,7 +36,7 @@ export default function AddCinemaPage({ handleAddCinema }) {
 
   useEffect(() => {
     formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  }, []);
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
