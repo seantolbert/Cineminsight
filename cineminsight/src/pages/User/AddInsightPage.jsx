@@ -20,7 +20,7 @@ export default function AddInsightPage({ handleAddInsight, cinemas, user }) {
 
   useEffect(() => {
     formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  });
+  }, [newInsight]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -76,6 +76,7 @@ export default function AddInsightPage({ handleAddInsight, cinemas, user }) {
                   value={newInsight.review}
                   onChange={handleChange}
                   style={{ height: 100 }}
+                  required
                 />
               </Form.Group>
               <Button

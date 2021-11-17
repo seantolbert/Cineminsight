@@ -100,7 +100,7 @@ function App() {
           <>
             <Container>
               <Switch>
-                <Route exact path="/">
+                <Route path="/">
                   <HomePage user={user} cinemas={cinemas} insights={insights} />
                 </Route>
 
